@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * sub - permutation first and last place
+ * _sub - permutation first and last place
  * @stack: begin
  * @line_number: line
  * Return: returns nothing
  */
-void sub(stack_t **stack, unsigned int line_number)
+void _sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current, *sum;
 	current = *stack;
