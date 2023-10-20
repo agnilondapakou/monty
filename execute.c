@@ -3,9 +3,8 @@
 /**
 * execute - executes the opcode
 * @stack: head linked list - stack
-* @counter: line_counter
-* @file: poiner to monty file
-* @content: line content
+* @line_counter: line_counter
+* @arg: pointer
 * Return: nothing
 */
 void execute(char *arg, stack_t **stack, unsigned int line_number)
