@@ -18,6 +18,7 @@ void execute(char *arg, stack_t **stack, unsigned int line_number)
 		{"rotl", rotl}, {"rotr", rotr}, {"mul", mul},
 		{NULL, NULL}
 	};
+
 	int i;
 	for (i = 0; op[i].opcode != NULL; i++)
 	{

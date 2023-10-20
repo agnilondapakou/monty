@@ -2,14 +2,16 @@
 
 /**
  * _div - divides the top two elements of the stack.
- * @head: stack head
- * @counter: line_number
+ * @stack: stack head
+ * @line_number: line_number
  * Return: no return
  */
 void _div(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current, *sum;
+
 	current = *stack;
+
 	if (*stack == NULL || current->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
