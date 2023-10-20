@@ -3,7 +3,7 @@
 /**
 * execute - executes the opcode
 * @stack: head linked list - stack
-* @line_counter: line_counter
+* @line_number: line_counter
 * @arg: pointer
 * Return: nothing
 */
@@ -19,6 +19,7 @@ void execute(char *arg, stack_t **stack, unsigned int line_number)
 	};
 
 	int i;
+
 	for (i = 0; op[i].opcode != NULL; i++)
 	{
 		if (strcmp(op[i].opcode, arg) == 0)

@@ -8,12 +8,15 @@
 void rotr(stack_t **stack, unsigned int line_number __attribute__((unused)))
 {
 	stack_t *current, *post;
+
 	current = *stack;
+
 	if (*stack == NULL || current->next == NULL)
 	{
 		return;
 	}
 	post = current->next;
+
 	while (post->next != NULL)
 	{
 		post = post->next;

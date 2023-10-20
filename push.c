@@ -8,13 +8,14 @@
 int _isdigit(char *str)
 {
 	int i;
+
 	for (i = 0; str[i] != '\0'; i++)
 	{
 		if (str[i] == '-' && i == 0)
 		{
 			continue;
 		}
-	if (isdigit(str[i]) == 0)
+		if (isdigit(str[i]) == 0)
 		{
 			return (-1);
 		}
@@ -31,13 +32,16 @@ int _isdigit(char *str)
 void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t)), *current;
+
 	char *arg;
+
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	arg = strtok(NULL, " \n\t\r");
+
 	if (arg == NULL || _isdigit(arg) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
@@ -46,6 +50,7 @@ void push(stack_t **stack, unsigned int line_number)
 	}
 	new->n = atoi(arg);
 	new->prev = NULL;
+
 	if (*stack == NULL)
 	{
 		new->next = NULL;
@@ -66,13 +71,16 @@ void push(stack_t **stack, unsigned int line_number)
 void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = malloc(sizeof(stack_t)), *current;
+
 	char *arg;
+
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	arg = strtok(NULL, " \n\t\r");
+
 	if (arg == NULL || _isdigit(arg) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
@@ -81,6 +89,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 	new->n = atoi(arg);
 	new->next = NULL;
+
 	if (*stack == NULL)
 	{
 		new->prev = NULL;
@@ -88,6 +97,7 @@ void _push(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	current = *stack;
+
 	while (current->next != NULL)
 	{
 		current = current->next;
