@@ -9,7 +9,9 @@
 void mul(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current, *sum;
+
 	current = *stack;
+
 	if (*stack == NULL || current->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
